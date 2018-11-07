@@ -38,7 +38,7 @@ public class VerifyDate {
     }
 
     /**
-     * 校验日期格式 yyyy-MM-dd
+     * 校验日期格式 yyyy-MM-dd HH:mm:ss 和 yyyy/MM/dd HH:mm:ss
      * @param dateTime
      * @return
      */
