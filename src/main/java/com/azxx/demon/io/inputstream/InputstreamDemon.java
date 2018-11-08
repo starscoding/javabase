@@ -14,11 +14,22 @@ public class InputstreamDemon {
     private static Logger logger = LoggerFactory.getLogger(InputstreamDemon.class);
 
     public static void main(String[] args) {
-        File file = new File("D:\\test.txt");
+        print("D:\\test.txt");
+    }
+
+    public static void print(String pathname){
+        File file = new File(pathname);
+        if(!file.exists()){
+            return;
+        }
         try {
             FileInputStream in = new FileInputStream(file);
-            logger.info("available:",in.available());
-            logger.info("read:",in.read());
+            byte[] bytes = new byte[1];
+            int length = 0;
+            while ((length = in.read(bytes))!=-1){
+                logger.info("读取到信息长度：{}",length);
+                logger.info(new String(bytes));
+            }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
