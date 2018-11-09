@@ -88,20 +88,20 @@ debug：当此属性设置为true时，将打印出logback内部日志信息，�
     <!--<logger name="org.hibernate.engine.QueryParameters" level="DEBUG" />-->
     <!--<logger name="org.hibernate.engine.query.HQLQueryPlan" level="DEBUG" />-->
 
-    <sqlDialect class="ch.qos.logback.core.db.dialect.MySQLDialect" />
-    <!--日志异步到数据库 -->
-    <appender name="DB" class="ch.qos.logback.classic.db.DBAppender">
-        <!--日志异步到数据库 -->
-        <connectionSource class="ch.qos.logback.core.db.DriverManagerConnectionSource">
-            <!--连接池 -->
-            <dataSource class="com.mchange.v2.c3p0.ComboPooledDataSource">
-                <driverClass>com.mysql.jdbc.Driver</driverClass>
-                <url>jdbc:mysql://127.0.0.1:3306/javabase</url>
-                <user>root</user>
-                <password>shouwang13</password>
-                <sqlDialect class="ch.qos.logback.core.db.dialect.MySQLDialect" />
-            </dataSource>
-        </connectionSource>
-        <sqlDialect class="ch.qos.logback.core.db.dialect.MySQLDialect" />
-    </appender>
+    <!--<sqlDialect class="ch.qos.logback.core.db.dialect.MySQLDialect" />-->
+    <!--&lt;!&ndash;日志异步到数据库 &ndash;&gt;-->
+    <!--<appender name="DB" class="ch.qos.logback.classic.db.DBAppender">-->
+        <!--&lt;!&ndash;日志异步到数据库 &ndash;&gt;-->
+        <!--<connectionSource class="ch.qos.logback.core.db.DriverManagerConnectionSource">-->
+            <!--&lt;!&ndash;连接池 &ndash;&gt;-->
+            <!--<dataSource class="com.mchange.v2.c3p0.ComboPooledDataSource">-->
+                <!--<driverClass>com.mysql.jdbc.Driver</driverClass>-->
+                <!--<url>jdbc:mysql://127.0.0.1:3306/javabase</url>-->
+                <!--<user>root</user>-->
+                <!--<password>shouwang13</password>-->
+                <!--<sqlDialect class="ch.qos.logback.core.db.dialect.MySQLDialect" />-->
+            <!--</dataSource>-->
+        <!--</connectionSource>-->
+        <!--<sqlDialect class="ch.qos.logback.core.db.dialect.MySQLDialect" />-->
+    <!--</appender>-->
 </configuration>

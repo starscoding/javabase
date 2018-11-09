@@ -34,7 +34,9 @@ public class VerifyDate {
         String regex = "^\\d{4}-\\d{1,2}-\\d{1,2}";
         //校验日期格式 yyyy/MM/dd
         String regex2 = "^\\d{4}/\\d{1,2}/\\d{1,2}";
-        return isRightFormat(regex,date)|isRightFormat(regex2,date);
+        String regex3 = "^\\d{4}[/|-]\\d{1,2}[/|-]\\d{1,2}";
+//        return isRightFormat(regex,date)|isRightFormat(regex2,date);
+        return isRightFormat(regex3,date);
     }
 
     /**
@@ -47,7 +49,9 @@ public class VerifyDate {
         String regex = "^\\d{4}-\\d{1,2}-\\d{1,2}\\s\\d{1,2}:\\d{1,2}:\\d{1,2}";
         //校验日期格式 yyyy/MM/dd
         String regex2 = "^\\d{4}/\\d{1,2}/\\d{1,2}\\s\\d{1,2}:\\d{1,2}:\\d{1,2}";
-        return isRightFormat(regex,dateTime)|isRightFormat(regex2,dateTime);
+        String regex3 = "^\\d{4}[/|-]\\d{1,2}[/|-]\\d{1,2}\\s\\d{1,2}:\\d{1,2}:\\d{1,2}";
+//        return isRightFormat(regex,dateTime)|isRightFormat(regex2,dateTime);
+        return isRightFormat(regex3,dateTime);
     }
 
     public static boolean isRightFormat(String regex,String str){

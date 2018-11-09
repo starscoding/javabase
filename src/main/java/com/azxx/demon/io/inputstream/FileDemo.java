@@ -11,16 +11,31 @@ public class FileDemo {
     private static Logger logger = LoggerFactory.getLogger(FileDemo.class);
 
     public static void main(String[] args) {
-        logger.info("hello log!");
+        String pathname = "C:\\Users\\HX0011001\\Desktop\\azxx\\temp\\test.txt";
+        createFile(pathname);
     }
 
-    public void createFile(){
-        String path = "";
-        String fileName = "";
-        File file = new File(path+fileName);
+    public static void createFile(String pathname){
+        File file = new File(pathname);
 
         try {
+            logger.info("文件是否存在：{}",file.exists());
+            logger.info("是否是目录:{}",file.isDirectory());
+            logger.info("是否是文件：{}",file.isFile());
+            logger.info("是否是隐藏文件：{}",file.isHidden());
+            logger.info("是否可读:{}",file.canRead());
+            logger.info("是否可写：{}",file.canWrite());
+            logger.error("删除文件：{}",file.delete());
+            file.mkdir();
+            //创建文件
             file.createNewFile();
+            file.getAbsoluteFile();
+            file.getAbsolutePath();
+            file.getName();
+            file.getPath();
+            file.getParent();
+            file.getParentFile().getName();
+            file.renameTo(new File("otherName"));
         } catch (IOException e) {
             e.printStackTrace();
         }
