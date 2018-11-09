@@ -14,10 +14,10 @@ public class FileInputstreamDemon {
     private static Logger logger = LoggerFactory.getLogger(FileInputstreamDemon.class);
 
     public static void main(String[] args) {
-        print("D:\\test.txt");
+        read("D:\\test.txt");
     }
 
-    public static void print(String pathname) {
+    public static void read(String pathname) {
 
         File file = new File(pathname);
         if (!file.exists()) {
@@ -37,6 +37,12 @@ public class FileInputstreamDemon {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
+            closeInputStream(in);
+        }
+    }
+
+    public static void closeInputStream(InputStream in){
+        if(in !=null){
             try {
                 in.close();
             } catch (IOException e) {
