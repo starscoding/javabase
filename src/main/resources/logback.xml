@@ -90,6 +90,8 @@ debug：当此属性设置为true时，将打印出logback内部日志信息，�
 
     <!--<sqlDialect class="ch.qos.logback.core.db.dialect.MySQLDialect" />-->
     <!--&lt;!&ndash;日志异步到数据库 &ndash;&gt;-->
+    <!--<sqlDialect class="ch.qos.logback.core.db.dialect.MySQLDialect" />-->
+    <!--日志异步到数据库 -->
     <!--<appender name="DB" class="ch.qos.logback.classic.db.DBAppender">-->
         <!--&lt;!&ndash;日志异步到数据库 &ndash;&gt;-->
         <!--<connectionSource class="ch.qos.logback.core.db.DriverManagerConnectionSource">-->
