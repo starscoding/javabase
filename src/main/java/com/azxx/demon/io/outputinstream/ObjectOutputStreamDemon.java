@@ -1,5 +1,6 @@
 package com.azxx.demon.io.outputinstream;
 
+import com.azxx.demon.pojo.User;
 import com.azxx.demon.properties.PropUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,7 +16,10 @@ public class ObjectOutputStreamDemon {
         ObjectOutputStream out = null;
         try {
             out = new ObjectOutputStream(getOutputStream(pathname));
-            out.write(123);
+//            out.writeInt(123);
+            User user = new User("xuzheng",28);
+            out.writeObject(user);
+            out.flush();
         } catch (IOException e) {
             e.printStackTrace();
         }finally {

@@ -14,11 +14,13 @@ public class ObjectInpustreamDemon {
     private static Logger logger = LoggerFactory.getLogger(ObjectInpustreamDemon.class);
 
     public static void main(String[] args) {
-        String pathname = PropUtils.get("pahtname");
+        String pathname = PropUtils.get("pathname");
         try {
             ObjectInputStream in = new ObjectInputStream(getInputStream(pathname));
-            logger.info("获取文件内容：{}",in.readInt());
+            logger.info("获取文件内容：{}",in.readObject());
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
