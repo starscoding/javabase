@@ -1,5 +1,6 @@
 package com.azxx.demon.io.inputstream;
 
+import com.azxx.demon.properties.PropUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,14 +14,10 @@ public class ObjectInpustreamDemon {
     private static Logger logger = LoggerFactory.getLogger(ObjectInpustreamDemon.class);
 
     public static void main(String[] args) {
-        String pathname = "D:\\test.txt";
+        String pathname = PropUtils.get("pahtname");
         try {
             ObjectInputStream in = new ObjectInputStream(getInputStream(pathname));
-            try {
-                System.out.println(in.readObject());
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            }
+            logger.info("获取文件内容：{}",in.readInt());
         } catch (IOException e) {
             e.printStackTrace();
         }

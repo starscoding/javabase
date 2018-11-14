@@ -52,5 +52,13 @@
             <version>${mysql}</version>
         </dependency>
         <!--mysql end-->
+
+        <!--utils start-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.4</version>
+        </dependency>
+        <!--utils end-->
     </dependencies>
 </project>
